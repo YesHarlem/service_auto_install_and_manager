@@ -1,0 +1,12 @@
+[Unit]
+Description=Assist 服务
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'cd /opt/assist && java -jar *.jar --spring.config.location=/opt/assist/config/application.yml'
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

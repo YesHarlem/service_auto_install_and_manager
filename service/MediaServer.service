@@ -1,0 +1,12 @@
+[Unit]
+Description=Media Server 服务
+After=network.target assist.service
+
+[Service]
+Type=simple
+ExecStart=/opt/media/MediaServer -d -m 3
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

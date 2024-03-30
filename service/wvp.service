@@ -1,0 +1,12 @@
+[Unit]
+Description=WVP 服务
+After=network.target MediaServer.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'cd /opt/wvp && java -jar *.jar --spring.config.location=/opt/wvp/config/application.yml'
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
